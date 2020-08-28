@@ -1,0 +1,13 @@
+.button {
+    -fx-background-color: darkslateblue;
+    -fx-text-fill: #fff;
+}
+#taxMessage {
+	-fx-font-family: serif;
+	-fx-font-style: normal;
+	-fx-font-weight: bold;
+	-fx-font-size: 20px;
+}
+.root {
+	-fx-background-color: beige;
+}
