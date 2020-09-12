@@ -1,14 +1,15 @@
-public class MergeSort {
-	private int[] temp, array;
 
-	MergeSort(int[] arr) {
+public class MergeSort {
+	private static int[] temp  = null; // Temporary array
+	private static int[] array = null; // Points to original array
+
+	static void sort(int[] arr) {
 		array = arr;
-		int len = arr.length;
-		temp = new int[len];
-		split(0, len - 1);
+		temp  = new int[arr.length];
+		split(0, arr.length - 1);
 	}
 
-	private void split(int low, int high) {
+	private static void split(int low, int high) {
 		if (low == high)
 			return; // Only one element
 
@@ -20,7 +21,7 @@ public class MergeSort {
 		merge(low, mid, high); // Merge all halves
 	}
 
-	private void merge(int low, int mid, int high) {
+	private static void merge(int low, int mid, int high) {
 		int i     = low;
 		int left  = low;     // Index starting from the back
 		int right = mid + 1; // Index starting from the right of the midpoint
