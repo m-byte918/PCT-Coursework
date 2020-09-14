@@ -56,7 +56,7 @@ public class Main {
 			method.invoke(null, arr);
 			totalTime += System.nanoTime() - startTime;
 		}
-		System.out.printf("    %-19s--> %d\n", sortName, totalTime / ITERATIONS);
+		System.out.printf("    %-19s--> %,d\n", sortName, totalTime / ITERATIONS);
 	}
 
 	public static void swap(int[] arr, int i, int j) {

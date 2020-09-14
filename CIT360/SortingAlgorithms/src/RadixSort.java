@@ -14,9 +14,9 @@ public class RadixSort {
 		// Get highest number in array 
 		int place = 0;
 		int max = array[0];
-		for (; place < array.length; ++place) {
-			if (max < array[place])
-				max = array[place];
+		for (int n = 0; place < array.length; ++place) {
+			if (max < (n = array[place]))
+				max = n;
 		}
 	    // Use counting sort for each place, starting at 1
 	    for (place = 1; max / place > 0; place *= BASE)
