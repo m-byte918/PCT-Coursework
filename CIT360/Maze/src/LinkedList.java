@@ -1,6 +1,6 @@
 // Linked list implementation
 
-public class LinkedList<T> implements ListI<T> {
+public class LinkedList<T> {
 
 	// LinkedLists wrap data in nodes
 	private class Node<E> {
@@ -16,18 +16,18 @@ public class LinkedList<T> implements ListI<T> {
 	private Node<T> _tail = null; // Points to last node
 	private long    _size = 0l;   // Total nodes in list
 
-	public T peekFirst() throws LinkedListException {
+	public T peekFirst() throws Exception {
 		if (_size == 0l) {
 			// Don't want to return null in case user purposely stores null in list
-			throw new LinkedListException("List is empty.");
+			throw new Exception("List is empty.");
 		}
 		return _head.data;
 	}
 	
-	public T peekLast() throws LinkedListException {
+	public T peekLast() throws Exception {
 		if (_size == 0l) {
 			// Don't want to return null in case user purposely stores null in list
-			throw new LinkedListException("List is empty.");
+			throw new Exception("List is empty.");
 		}
 		return _tail.data;
 	}
@@ -60,9 +60,9 @@ public class LinkedList<T> implements ListI<T> {
 		++_size;
 	}
 
-	public T removeFirst() throws LinkedListException {
+	public T removeFirst() throws Exception {
 		if (_size == 0l) {
-			throw new LinkedListException("List underflow");
+			throw new Exception("List underflow");
 		}
 		T data = _head.data; // Temporary
 
@@ -75,7 +75,7 @@ public class LinkedList<T> implements ListI<T> {
 		return data;
 	}
  
-	public T removeMiddle() throws LinkedListException {
+	public T removeMiddle() throws Exception {
 		if (_size <= 2l) {
 			return removeLast(); // Achieves the same thing
 		}
@@ -96,7 +96,7 @@ public class LinkedList<T> implements ListI<T> {
 		return center.data;
 	}
 
-	public T removeLast() throws LinkedListException {
+	public T removeLast() throws Exception {
 		if (_size <= 1l) {
 			return removeFirst(); // Achieves the same thing
 		}
@@ -111,6 +111,17 @@ public class LinkedList<T> implements ListI<T> {
 
 		--_size;
 		return lastTail.data;
+	}
+	
+	public T get(long index) throws Exception {
+		if (index > _size - 1l) {
+			throw new Exception("Index out of range");
+		}
+		Node<T> temp = _head;
+		for (int i = 0; i != index; ++i) {
+			temp = temp.next;
+		}
+		return temp.data;
 	}
 
 	public int indexOf(T obj) {
