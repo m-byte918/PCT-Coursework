@@ -4,11 +4,17 @@ public class Cell {
 	public int x;
 	public int y;
 	public char data;
+	public int dist;
 
 	Cell(int x, int y, char data) {
 		this.x = x;
 		this.y = y;
 		this.data = data;
+	}
+
+	public static boolean existsAt(int x, int y) {
+		// Returns whether or not a cell exists at the provided coordinates
+		return x > -1 && x < Maze.WIDTH && y > -1 && y < Maze.HEIGHT;
 	}
 
 	public LinkedList<Cell> getPossibleNeighbors(boolean recursive) {
@@ -34,8 +40,7 @@ public class Cell {
 	}
 
 	private void addDirection(LinkedList<Cell> list, int x, int y, boolean recursive) {
-		if (x <= -1 || x >= Maze.WIDTH || y <= -1 || y >= Maze.HEIGHT) {
-			// Direction does not exist (out of bounds)
+		if (!Cell.existsAt(x, y)) {
 			return;
 		}
 		Cell direction = Maze.maze[x][y];

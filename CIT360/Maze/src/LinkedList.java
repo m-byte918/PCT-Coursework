@@ -23,7 +23,7 @@ public class LinkedList<T> {
 		}
 		return _head.data;
 	}
-	
+
 	public T peekLast() throws Exception {
 		if (_size == 0l) {
 			// Don't want to return null in case user purposely stores null in list
@@ -31,7 +31,7 @@ public class LinkedList<T> {
 		}
 		return _tail.data;
 	}
-	
+
 	public long size() {
 		return _size;
 	}
