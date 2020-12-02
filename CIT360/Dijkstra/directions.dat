@@ -1,0 +1,20 @@
+Shortest path from Maynard & 2nd to Walnut & LL
+Start at Maynard & 2nd. Total distance = 0
+Then go to Maynard & 4th Total distance = 0.050944116
+Then go to Campbell & 4th Total distance = 0.37586266
+Then go to Campbell & LL Total distance = 0.4189499
+Then go to Walnut & LL Total distance = 0.7703035
+
+Shortest path from PCT Maynard to Mulberry & LL
+Start at PCT Maynard. Total distance = 0
+Then go to Maynard & 2nd Total distance = 0.055382542
+Then go to Campbell & 2nd Total distance = 0.3777441
+Then go to Campbell & 3rd Total distance = 0.4055611
+Then go to Walnut & 3rd Total distance = 0.7703376
+Then go to Center & 3rd Total distance = 1.175853
+Then go to Hepburn & 3rd Total distance = 1.5774951
+Then go to Market & 3rd Total distance = 2.1809468
+Then go to Mulberry & 3rd Total distance = 2.3542395
+Then go to Mulberry & 4th Total distance = 2.469912
+Then go to Mulberry & LL Total distance = 2.5591555
+
